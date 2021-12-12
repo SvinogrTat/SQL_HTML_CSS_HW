@@ -1,0 +1,49 @@
+mysql.server restart
+mysql -uroot
+mysql> show databases;
+mysql> show tables;
+mysql> create database films_base;
+mysql> drop database qaa3;
+mysql> use films_base;
+mysql> create table actors(
+    -> id int(11) not null primary key auto_increment,
+    -> first_name varchar(25) not null default "John",
+    -> last_name varchar(25) not null default "Dou",
+    -> age int(2) not null default "25"
+    -> );
+mysql> desc actors;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| first_name | varchar(25) | NO   |     | John    |                |
+| last_name  | varchar(25) | NO   |     | Dou     |                |
+| age        | int         | NO   |     | 25      |                |
++------------+-------------+------+-----+---------+----------------+
+mysql> show create table actors;
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table  | Create Table                                                                                                                                                                                                                                                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| actors | CREATE TABLE `actors` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(25) NOT NULL DEFAULT 'John',
+  `last_name` varchar(25) NOT NULL DEFAULT 'Dou',
+  `age` int NOT NULL DEFAULT '25',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> alter table actors add column sex varchar(1);
+mysql> desc actors;
+mysql> insert into actors set first_name = "Matthias", last_name = "Schweighöfer", age = 40, sex = "M";
+mysql> select * from actors;
+mysql> insert into actors (first_name, last_name, age, sex) values ("Ryan", "Reynolds", 45, "M"), ("Matt", "Damon", 51, "M"), ("Christoph", "Waltz", 65, "M"), ("Bill", "Skarsgård", 31, "M");
+mysql> create table films( id int(11) not null primary key auto_increment, film_name varchar(25) not null default "unknown", release_year int(4) not null default "2000");
+mysql> insert into films (film_name, release_year) values ("Army of Thieves", 2021), ("Deadpool", 2016), ("Ocean's Eleven", 2001), ("Django Unchained", 2012), ("It", 2017);
+mysql> create table directors( id int(11) not null primary key auto_increment, first_name varchar(25) not null default "unknown", last_name varchar(25) not null default "unknown");
+mysql> insert into directors (first_name, last_name) values ("Steven", "Soderbergh"), ("Quentin", "Tarantino"), ("Matthias", "Schweighöfer");
+mysql> select first_name, age from actors where id between 2 and 4;
+mysql> select first_name, age from actors order by first_name;
+mysql> select first_name, age from actors order by age asc limit 3;
+mysql> exit
