@@ -1,17 +1,35 @@
 body{
-  background-color: #FFFFE0;
+  /* background-image: url(cvetovaya-palitra-4315.png); */
+  background-color: #f6fafb;
+}
+ img {
+    display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+     height: 75%;
+     border-radius: 5%;
+ }
+
+caption{
+  text-align: left;
+}
+
+th {
+  text-align: left;
 }
 
 .brd {
   border: 4px
-  double black;
-  background: #FFDAB9;
+  double: black;
+  background: #c1c8c7;
   padding: 10px;
   width: 50%;
+  border-radius: 7%;
 }
 
 .table{
-	border: 1px solid #FFA07A;
+	border: 1px solid #5e6668;
 	table-layout: fixed;
 	width: 50%;
 	margin-bottom: 20px;
@@ -19,25 +37,32 @@ body{
 .table th {
 	font-weight: bold;
 	padding: 5px;
-	background: #FFFFE0;
-	border: 1px solid #FFA07A;
+	background: #f6fafb;
+	border: 1px solid #5e6668;
 }
 .table td{
 	padding: 5px 10px;
-	border: 1px solid #FFA07A;
+	border: 1px solid #5e6668;
 	text-align: left;
 }
 .table tbody tr:nth-child(odd){
-	background: #FFFFE0;
+	background: #f6fafb;
 }
 .table tbody tr:nth-child(even){
-	background: #FFFFE0;
+	background: #f6fafb;
 }
 
-#tat {
-  font: bold 22px;
+.tat {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 50%;
+
+}
+.tat td, .tat th{
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
-a:visited { color: #708090; text-decoration: underline; text-decoration-color: blue}
+a:visited { color: #d49c6b; text-decoration: underline; text-decoration-color: #c1c8c7}
 a:active { color: black; text-decoration: underline }
-a:hover { color: #DCDCDC; text-decoration: none }
+a:hover { color: #c1c8c7; text-decoration: none }
