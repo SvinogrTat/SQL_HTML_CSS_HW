@@ -1,0 +1,19 @@
+<suite name="Group of group Suite" verbose="1">
+    <test name="Group of group Test">
+        <groups>
+            <define name="positive-group">
+                <include name="positive_test" />
+            </define>
+            <define name="negative-group">
+                <include name="negative_test" />
+            </define>
+            <run>
+                <include name="positive-group" />
+                <exclude name="negative-group" />
+            </run>
+        </groups>
+        <classes>
+            <class name="DouTestsClass"/>
+        </classes>
+    </test>
+</suite>
